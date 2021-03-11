@@ -19,7 +19,7 @@ spring:
   application:
     name: eureka-server-clustered
 server:
-  port: 9001
+  port: 8761
 eureka:
   instance:
     hostname: peer-1-server.com
@@ -27,7 +27,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://peer-2-server.com:9002/eureka/,http://peer-3-server.com:9003/eureka/
+      defaultZone: http://peer-2-server.com:8762/eureka/,http://peer-3-server.com:8763/eureka/
 
 ---
 spring:
@@ -35,7 +35,7 @@ spring:
   application:
     name: eureka-server-clustered
 server:
-  port: 9002
+  port: 8762
 eureka:
   instance:
     hostname: peer-2-server.com
@@ -43,7 +43,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://peer-1-server.com:9001/eureka/,http://peer-3-server.com:9003/eureka/
+      defaultZone: http://peer-1-server.com:8761/eureka/,http://peer-3-server.com:8763/eureka/
 
 ---
 spring:
@@ -51,7 +51,7 @@ spring:
   application:
     name: eureka-server-clustered
 server:
-  port: 9003
+  port: 8763
 eureka:
   instance:
     hostname: peer-3-server.com
@@ -59,4 +59,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://peer-1-server.com:9001/eureka/,http://peer-2-server.com:9002/eureka/
+      defaultZone: http://peer-1-server.com:8761/eureka/,http://peer-2-server.com:8762/eureka/

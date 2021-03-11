@@ -1,4 +1,4 @@
-package singh.mahabir.registry.client;
+package biboots.registry.client;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;

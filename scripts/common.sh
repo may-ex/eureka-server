@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-JARNAME="eureka-server-1.0.0-SNAPSHOT."
+JARNAME="eureka-server-1.0.0-SNAPSHOT.jar"

@@ -9,6 +9,7 @@ eureka:
     enable-self-preservation: false
   instance:
     hostname: default-eureka-server.com
+    preferIpAddress: true
   client:
     registerWithEureka: false
     fetchRegistry: false

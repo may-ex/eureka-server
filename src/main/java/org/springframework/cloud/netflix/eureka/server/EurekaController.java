@@ -30,6 +30,12 @@ import com.netflix.eureka.registry.PeerAwareInstanceRegistry;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl;
 import com.netflix.eureka.resources.StatusResource;
 import com.netflix.eureka.util.StatusInfo;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,11 +43,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Spencer Gibb
@@ -195,7 +196,7 @@ public class EurekaController {
             ArrayList<Map<String, Object>> instanceInfos = new ArrayList<>();
             appData.put("instanceInfos", instanceInfos);
             for (Map.Entry<InstanceInfo.InstanceStatus, List<Pair<String, String>>> entry : instancesByStatus
-                .entrySet()) {
+                    .entrySet()) {
                 List<Pair<String, String>> value = entry.getValue();
                 InstanceInfo.InstanceStatus status = entry.getKey();
                 LinkedHashMap<String, Object> instanceData = new LinkedHashMap<>();

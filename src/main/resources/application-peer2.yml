@@ -1,0 +1,12 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka1.mayex.org
+    preferIpAddress: true
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka.mayex.org:${server.port}/eureka/, http://eureka2.mayex.org:${server.port}/eureka/

@@ -2,7 +2,5 @@
 
 CURRENT=$(dirname "$0")
 source "${CURRENT}"/common.sh
-
-bash "${CURRENT}"/stop.sh
-java -Xms2G -Xmx2g -jar "${CURRENT}"/../target/${JARNAME} &
+java -Xms1G -Xmx2g -Duser.timezone=GMT -Dspring.profiles.active="$1" -jar "${CURRENT}"/../target/${JARNAME}
 

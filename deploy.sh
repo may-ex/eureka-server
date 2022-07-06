@@ -13,4 +13,4 @@ cat eureka-server.tar | docker load
 
 #本地执行
 (docker stop eureka-server || true ) && (docker rm eureka-server || true)
-docker run -p 8761:8761 -m 2g -e "Xms=1.5g"  --restart=always --name="eureka-server" -d mayex/eureka-server:1.0.0 peer1
+docker run -p 8761:8761 -m 2g -e "JAVA_OPTS=-server -Xms1g -Xmx1g"  --restart=always --name="eureka-server" -d mayex/eureka-server:1.0.0 peer1
